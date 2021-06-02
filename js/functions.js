@@ -49,11 +49,14 @@ async function callFetchWithPut(id, novoPokemon){
     await fetch(`${url}${id}`, options);
 }
 
-async function callFetchWithDelete(){
-    let headers = new Headers();
+async function callFetchWithDelete(id){
     const options = {
-        method : 'GET',
+        method : 'DELETE',
         mode: 'cors',
-        headers: headers
+        headers: {
+            'Accept' : 'application/json',
+            'content-type' : 'application/json' 
+        }
     }
+    await fetch(`${url}${id}`, options);
 }
