@@ -15,5 +15,33 @@
         <a href="javascript:callFetchWithDelete(11)">Delete</a>
 
         <p id='json'></p>
+
+        <h2>Formulario Basico (Post)</h2>
+        <form id="postForm">
+             <label for="entrarpokemon">Pokemon:</label>
+             <input type="text" name="pokemon" id="entrarpokemon"/>
+             <button type="submit" onclick="return submitPost()">Submit</button>
+        </form>
+
+        <h2>Formulario Basico (Put)</h2>
+        <form id="putForm">
+            <label>Id:
+            <input type="text" name="id"/>
+            </label>
+            <label>Pokemon:
+            <input type="text" name="pokemon"/>
+            </label>
+            <button type="submit" onclick="return submitPut()">Submit</button>
+       </form>
+
+       <h2>Formulario Basico (Delete)</h2>
+       <form id="deleteForm">
+        <label>Id:
+        <input type="text" name="id"/>
+        </label>
+        <button type="submit" onclick="return submitDelete()">Submit</button>
+   </form>
+
+
     </body>
 </html>
