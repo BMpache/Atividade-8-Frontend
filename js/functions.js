@@ -68,7 +68,12 @@ async function callFetchWithDelete(id){
 function submitPost(){
     console.log("entrei na função");
     const form = document.forms['postForm'];    
-    const novo = form["pokemon"].value;
+    const novopoke = form["pokemon"].value;
+    const novotype = form["type"].value;
+    const novoabout = form["about"].value;
+
+    const novo = {"name": novopoke , "type" : novotype, "about" : novoabout};
+    
     callFetchWithPost(novo);
     return false; // Evitar o reload da tela.
 }
@@ -76,7 +81,12 @@ function submitPost(){
 function submitPut(){
     const form = document.forms['putForm'];  
     const id = form["id"].value;  
-    const novo = form["pokemon"].value;
+    const novopoke = form["pokemon"].value;
+    const novotype = form["type"].value;
+    const novoabout = form["about"].value;
+
+    const novo = {"name": novopoke , "type" : novotype, "about" : novoabout};
+    
     callFetchWithPut(id, novo);
     return false; // Evitar o reload da tela.
 }
