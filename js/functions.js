@@ -1,5 +1,5 @@
 
-let url = 'https://tt905-2021-mensagens-bruno.herokuapp.com/'
+let url = 'https://tt905-2021-mensagens-bruno.herokuapp.com/pokedex'
 
 async function callFetchWithGet(){
     let headers = new Headers();
@@ -16,5 +16,38 @@ async function callFetchWithGet(){
         output.innerHTML = await response.text();
     } else {
         console.log("Deu errado");
+    }
+}
+
+async function callFetchWithPost(pokemon){
+    const options = {
+        method : 'POST',
+        mode: 'cors',
+        headers: {
+            'Accept' : 'application/json',
+            'content-type' : 'application/json'
+        },
+        body : JSON.stringify({
+            'pokedexs' : pokemon
+        })
+    }
+    await fetch(url, options);
+}
+
+async function callFetchWithPut(){
+    let headers = new Headers();
+    const options = {
+        method : 'GET',
+        mode: 'cors',
+        headers: headers
+    }
+}
+
+async function callFetchWithDelete(){
+    let headers = new Headers();
+    const options = {
+        method : 'GET',
+        mode: 'cors',
+        headers: headers
     }
 }
