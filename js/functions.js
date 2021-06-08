@@ -46,7 +46,7 @@ async function callFetchWithPut(id, novoPokemon){
             'pokedexs' : novoPokemon
         })
     }
-    await fetch(`${url}${id}`, options);
+    await fetch(`${url}/${id}`, options);
 }
 
 async function callFetchWithDelete(id){
