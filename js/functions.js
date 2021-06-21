@@ -50,7 +50,7 @@ async function callFetchWithPut(id, novopokemon, novotype, novoabout){
             'about' : novoabout
         })
     }
-    await fetch(`${url}${id}`, options);
+    await fetch(`${url}/${id}`, options);
 }
 
 async function callFetchWithDelete(id){
@@ -93,7 +93,7 @@ function submitPut(){
 
 function submitDelete(){
     const form = document.forms['deleteForm'];  
-    const identidade= form["id"].value;  
-    callFetchWithDelete(identidade);
+    const id= form["id"].value;  
+    callFetchWithDelete(id);
     return false; // Evitar o reload da tela.
 }
