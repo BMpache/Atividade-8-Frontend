@@ -83,9 +83,9 @@ function submitPost(){
 function submitPut(){
     const form = document.forms['putForm'];  
     const identidad = form["id"].value;  
-    const novopokemon = form["pokemon"].value;
-    const novotype = form["type"].value;
-    const novoabout = form["about"].value;
+    const novopokemon = form["novopokemon"].value;
+    const novotype = form["novotype"].value;
+    const novoabout = form["novoabout"].value;
     
     callFetchWithPut(identidad, novopokemon, novotype, novoabout);
     return false; // Evitar o reload da tela.
