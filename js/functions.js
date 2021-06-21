@@ -19,7 +19,7 @@ async function callFetchWithGet(){
     }
 }
 
-async function callFetchWithPost(pokemon){
+async function callFetchWithPost(pokemon, type, about){
     const options = {
         method : 'POST',
         mode: 'cors',
@@ -28,13 +28,15 @@ async function callFetchWithPost(pokemon){
             'content-type' : 'application/json'
         },
         body : JSON.stringify({
-            'pokedexs' : pokemon
+            'name' : pokemon,
+            'type' : type,
+            'about' : about
         })
     }
     await fetch(url, options);
 }
 
-async function callFetchWithPut(id, novoPokemon){
+async function callFetchWithPut(id, novopokemon,novotype, novoabout){
     const options = {
         method : 'PUT',
         mode: 'cors',
@@ -43,7 +45,9 @@ async function callFetchWithPut(id, novoPokemon){
             'content-type' : 'application/json'
         },
         body : JSON.stringify({
-            'pokedexs' : novoPokemon
+            'name' : novopokemon,
+            'type' : novotype,
+            'about' : novoabout
         })
     }
     await fetch(`${url}/${id}`, options);
@@ -68,13 +72,11 @@ async function callFetchWithDelete(id){
 function submitPost(){
     console.log("entrei na função");
     const form = document.forms['postForm'];    
-    const novopoke = form["pokemon"].value;
-    const novotype = form["type"].value;
-    const novoabout = form["about"].value;
-
-    const novo = {"name": novopoke , "type" : novotype, "about" : novoabout};
+    const poke = form["pokemon"].value;
+    const type = form["type"].value;
+    const about = form["about"].value;
     
-    callFetchWithPost(novo);
+    callFetchWithPost(pokemon, type, about);
     return false; // Evitar o reload da tela.
 }
 
@@ -84,10 +86,8 @@ function submitPut(){
     const novopoke = form["pokemon"].value;
     const novotype = form["type"].value;
     const novoabout = form["about"].value;
-
-    const novo = {"name": novopoke , "type" : novotype, "about" : novoabout};
     
-    callFetchWithPut(id, novo);
+    callFetchWithPut(id, novopokemon, novotype, novoabout);
     return false; // Evitar o reload da tela.
 }
 
