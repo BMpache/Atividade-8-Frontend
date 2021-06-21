@@ -36,7 +36,7 @@ async function callFetchWithPost(pokemon, type, about){
     await fetch(url, options);
 }
 
-async function callFetchWithPut(id, novopokemon, novotype, novoabout){
+async function callFetchWithPut(id, novpokemon, novtype, novabout){
     const options = {
         method : 'PUT',
         mode: 'cors',
@@ -45,9 +45,9 @@ async function callFetchWithPut(id, novopokemon, novotype, novoabout){
             'content-type' : 'application/json'
         },
         body : JSON.stringify({
-            'name' : novopokemon,
-            'type' : novotype,
-            'about' : novoabout
+            'name' : novpokemon,
+            'type' : novtype,
+            'about' : novabout
         })
     }
     await fetch(`${url}${id}`, options);
