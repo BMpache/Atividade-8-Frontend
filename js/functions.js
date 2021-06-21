@@ -50,7 +50,7 @@ async function callFetchWithPut(id, novopokemon, novotype, novoabout){
             'about' : novoabout
         })
     }
-    await fetch(`${url}/${id}`, options);
+    await fetch(`${url}${id}`, options);
 }
 
 async function callFetchWithDelete(id){
