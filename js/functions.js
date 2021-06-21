@@ -83,11 +83,11 @@ function submitPost(){
 function submitPut(){
     const form = document.forms['putForm'];  
     const id = form["id"].value;  
-    const novpokemon = form["pokemon"].value;
-    const novtype = form["type"].value;
-    const novabout = form["about"].value;
+    const novopokemon = form["pokemon"].value;
+    const novotype = form["type"].value;
+    const novoabout = form["about"].value;
     
-    callFetchWithPut(id, novpokemon, novtype, novabout);
+    callFetchWithPut(id, novopokemon, novotype, novoabout);
     return false; // Evitar o reload da tela.
 }
 
