@@ -62,7 +62,7 @@ async function callFetchWithDelete(id){
             'content-type' : 'application/json' 
         }
     }
-    await fetch(`${url}${id}`, options);
+    await fetch(`${url}/${id}`, options);
 }
 
 /*
