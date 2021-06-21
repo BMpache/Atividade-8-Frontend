@@ -36,7 +36,7 @@ async function callFetchWithPost(pokemon, type, about){
     await fetch(url, options);
 }
 
-async function callFetchWithPut(id, novpokemon, novtype, novabout){
+async function callFetchWithPut(identidade, novpokemon, novtype, novabout){
     const options = {
         method : 'PUT',
         mode: 'cors',
@@ -50,7 +50,7 @@ async function callFetchWithPut(id, novpokemon, novtype, novabout){
             'about' : novabout
         })
     }
-    await fetch(`${url}${id}`, options);
+    await fetch(`${url}${identidade}`, options);
 }
 
 async function callFetchWithDelete(id){
@@ -82,12 +82,12 @@ function submitPost(){
 
 function submitPut(){
     const form = document.forms['putForm'];  
-    const id = form["id"].value;  
+    const identidad = form["id"].value;  
     const novopokemon = form["pokemon"].value;
     const novotype = form["type"].value;
     const novoabout = form["about"].value;
     
-    callFetchWithPut(id, novopokemon, novotype, novoabout);
+    callFetchWithPut(identidad, novopokemon, novotype, novoabout);
     return false; // Evitar o reload da tela.
 }
 
