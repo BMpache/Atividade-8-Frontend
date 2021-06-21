@@ -82,18 +82,18 @@ function submitPost(){
 
 function submitPut(){
     const form = document.forms['putForm'];  
-    const i = form["id"].value;  
+    const id = form["id"].value;  
     const novpokemon = form["pokemon"].value;
     const novtype = form["type"].value;
     const novabout = form["about"].value;
     
-    callFetchWithPut(i, novpokemon, novtype, novabout);
+    callFetchWithPut(id, novpokemon, novtype, novabout);
     return false; // Evitar o reload da tela.
 }
 
 function submitDelete(){
     const form = document.forms['deleteForm'];  
-    const iden = form["id"].value;  
-    callFetchWithDelete(iden);
+    const identidade= form["id"].value;  
+    callFetchWithDelete(identidade);
     return false; // Evitar o reload da tela.
 }
