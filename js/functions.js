@@ -1,5 +1,5 @@
 
-let url = 'https://tt905-2021-mensagens-bruno.herokuapp.com/database'
+let url = 'https://tt905-2021-mensagens-bruno.herokuapp.com/database/'
 
 async function callFetchWithGet(){
     let headers = new Headers();
@@ -50,7 +50,7 @@ async function callFetchWithPut(id, novopokemon, novotype, novoabout){
             'about' : novoabout
         })
     }
-    await fetch(`${url}/${id}`, options);
+    await fetch(`${url}${id}`, options);
 }
 
 async function callFetchWithDelete(id){
