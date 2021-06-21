@@ -72,11 +72,11 @@ async function callFetchWithDelete(id){
 function submitPost(){
     console.log("entrei na função");
     const form = document.forms['postForm'];    
-    const pokemon = form["pokemon"].value;
-    const type = form["type"].value;
-    const about = form["about"].value;
+    const poke = form["pokemon"].value;
+    const typ= form["type"].value;
+    const abou = form["about"].value;
     
-    callFetchWithPost(pokemon, type, about);
+    callFetchWithPost(poke, typ, abou);
     return false; // Evitar o reload da tela.
 }
 
